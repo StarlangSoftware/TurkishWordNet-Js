@@ -1,0 +1,113 @@
+(function (factory) {
+    if (typeof module === "object" && typeof module.exports === "object") {
+        var v = factory(require, exports);
+        if (v !== undefined) module.exports = v;
+    }
+    else if (typeof define === "function" && define.amd) {
+        define(["require", "exports"], factory);
+    }
+})(function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.Synonym = void 0;
+    class Synonym {
+        /**
+         * A constructor that creates a new {@link Array} literals.
+         */
+        constructor() {
+            this.literals = new Array();
+        }
+        /**
+         * Appends the specified Literal to the end of literals list.
+         *
+         * @param literal element to be appended to the list
+         */
+        addLiteral(literal) {
+            this.literals.push(literal);
+        }
+        /**
+         * Moves the specified literal to the first of literals list.
+         *
+         * @param literal element to be moved to the first element of the list
+         */
+        moveFirst(literal) {
+            if (this.contains(literal)) {
+                this.literals.splice(this.literals.indexOf(literal), 1);
+                this.literals.splice(0, 0, literal);
+            }
+        }
+        /**
+         * Returns the element at the specified position in literals list.
+         *
+         * @param index index of the element to return
+         * @return the element at the specified position in the list
+         */
+        getLiteral(index) {
+            if (!isNaN(index)) {
+                return this.literals[index];
+            }
+            else {
+                for (let literal of this.literals) {
+                    if (literal.getName() == index) {
+                        return literal;
+                    }
+                }
+                return undefined;
+            }
+        }
+        /**
+         * Returns size of literals list.
+         *
+         * @return the size of the list
+         */
+        literalSize() {
+            return this.literals.length;
+        }
+        /**
+         * Returns true if literals list contains the specified literal.
+         *
+         * @param literal element whose presence in the list is to be tested
+         * @return true if the list contains the specified element
+         */
+        contains(literal) {
+            return this.literals.indexOf(literal) != -1;
+        }
+        /**
+         * Returns true if literals list contains the specified String literal.
+         *
+         * @param literalName element whose presence in the list is to be tested
+         * @return true if the list contains the specified element
+         */
+        containsLiteral(literalName) {
+            for (let literal of this.literals) {
+                if (literal.getName() == literalName) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        /**
+         * Removes the first occurrence of the specified element from literals list,
+         * if it is present. If the list does not contain the element, it stays unchanged.
+         *
+         * @param toBeRemoved element to be removed from the list, if present
+         */
+        removeLiteral(toBeRemoved) {
+            this.literals.splice(this.literals.indexOf(toBeRemoved), 1);
+        }
+        /**
+         * Overridden toString method to print literals.
+         *
+         * @return concatenated literals
+         */
+        toString() {
+            let result = "";
+            for (let literal of this.literals) {
+                result = result + literal.getName() + " ";
+            }
+            return result;
+        }
+    }
+    exports.Synonym = Synonym;
+});
+//# sourceMappingURL=Synonym.js.map

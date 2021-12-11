@@ -1,0 +1,109 @@
+import {Literal} from "./Literal";
+
+export class Synonym {
+
+    private literals: Array<Literal> = new Array<Literal>()
+
+    /**
+     * A constructor that creates a new {@link Array} literals.
+     */
+    constructor() {
+    }
+
+    /**
+     * Appends the specified Literal to the end of literals list.
+     *
+     * @param literal element to be appended to the list
+     */
+    addLiteral(literal: Literal){
+        this.literals.push(literal)
+    }
+
+    /**
+     * Moves the specified literal to the first of literals list.
+     *
+     * @param literal element to be moved to the first element of the list
+     */
+    moveFirst(literal: Literal){
+        if (this.contains(literal)){
+            this.literals.splice(this.literals.indexOf(literal), 1)
+            this.literals.splice(0, 0, literal)
+        }
+    }
+
+    /**
+     * Returns the element at the specified position in literals list.
+     *
+     * @param index index of the element to return
+     * @return the element at the specified position in the list
+     */
+    getLiteral(index: any): Literal{
+        if (!isNaN(index)){
+            return this.literals[index]
+        } else {
+            for (let literal of this.literals) {
+                if (literal.getName() == index) {
+                    return literal;
+                }
+            }
+            return undefined
+        }
+    }
+
+    /**
+     * Returns size of literals list.
+     *
+     * @return the size of the list
+     */
+    literalSize(): number{
+        return this.literals.length
+    }
+
+    /**
+     * Returns true if literals list contains the specified literal.
+     *
+     * @param literal element whose presence in the list is to be tested
+     * @return true if the list contains the specified element
+     */
+    contains(literal: Literal): boolean{
+        return this.literals.indexOf(literal) != -1
+    }
+
+    /**
+     * Returns true if literals list contains the specified String literal.
+     *
+     * @param literalName element whose presence in the list is to be tested
+     * @return true if the list contains the specified element
+     */
+    containsLiteral(literalName: string): boolean{
+        for (let literal of this.literals) {
+            if (literal.getName() == literalName) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Removes the first occurrence of the specified element from literals list,
+     * if it is present. If the list does not contain the element, it stays unchanged.
+     *
+     * @param toBeRemoved element to be removed from the list, if present
+     */
+    removeLiteral(toBeRemoved: Literal){
+        this.literals.splice(this.literals.indexOf(toBeRemoved), 1)
+    }
+
+    /**
+     * Overridden toString method to print literals.
+     *
+     * @return concatenated literals
+     */
+    toString(): string{
+        let result = "";
+        for (let literal of this.literals) {
+            result = result + literal.getName() + " ";
+        }
+        return result;
+    }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "nlptoolkit-wordnet",
+  "version": "1.0.0",
+  "description": "Turkish WordNet Processing Library",
+  "main": "index.js",
+  "scripts": {
+    "test": "Mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StarlangSoftware/TurkishWordNet-Js.git"
+  },
+  "author": "Olcay Taner Yıldız",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StarlangSoftware/TurkishWordNet-Js/issues"
+  },
+  "homepage": "https://github.com/StarlangSoftware/TurkishWordNet-Js#readme",
+  "devDependencies": {
+    "@types/mocha": "^9.0.0",
+    "mocha": "^9.1.3",
+    "nlptoolkit-corpus": "^1.0.2",
+    "nlptoolkit-dictionary": "^1.0.2",
+    "nlptoolkit-morphologicalanalysis": "^1.0.1",
+    "nlptoolkit-xmlparser": "^1.0.4",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2"
+  }
+}
