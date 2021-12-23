@@ -159,7 +159,7 @@ export declare class WordNet {
      * @param fsm       finite state machine morphological analyzer to be used at getting possible words
      * @return a list of literal
      */
-    constructLiterals(word: string, parse: MorphologicalParse, metaParse: MetamorphicParse, fsm: FsmMorphologicalAnalyzer): Literal[];
+    constructLiterals(word: string, parse: MorphologicalParse, metaParse: MetamorphicParse, fsm: FsmMorphologicalAnalyzer): Array<Literal>;
     /**
      * Creates a list of SynSets with a specified word, or possible words corresponding to morphological parse.
      *
@@ -169,7 +169,7 @@ export declare class WordNet {
      * @param fsm       finite state machine morphological analyzer to be used at getting possible words
      * @return a list of SynSets
      */
-    constructSynSets(word: string, parse: MorphologicalParse, metaParse: MetamorphicParse, fsm: FsmMorphologicalAnalyzer): SynSet[];
+    constructSynSets(word: string, parse: MorphologicalParse, metaParse: MetamorphicParse, fsm: FsmMorphologicalAnalyzer): Array<SynSet>;
     /**
      * Returns a list of literals using 5 possible words gathered with the specified morphological parses and metamorphic parses.
      *
@@ -186,7 +186,7 @@ export declare class WordNet {
      * @param fsm                 finite state machine morphological analyzer to be used at getting possible words
      * @return a list of literals
      */
-    constructIdiomLiterals(fsm: FsmMorphologicalAnalyzer, morphologicalParse1: MorphologicalParse, metaParse1: MetamorphicParse, morphologicalParse2: MorphologicalParse, metaParse2: MetamorphicParse, morphologicalParse3: MorphologicalParse, metaParse3: MetamorphicParse, morphologicalParse4: MorphologicalParse, metaParse4: MetamorphicParse, morphologicalParse5: MorphologicalParse, metaParse5: MetamorphicParse): Array<Literal>;
+    constructIdiomLiterals(fsm: FsmMorphologicalAnalyzer, morphologicalParse1: MorphologicalParse, metaParse1: MetamorphicParse, morphologicalParse2: MorphologicalParse, metaParse2: MetamorphicParse, morphologicalParse3?: MorphologicalParse, metaParse3?: MetamorphicParse, morphologicalParse4?: MorphologicalParse, metaParse4?: MetamorphicParse, morphologicalParse5?: MorphologicalParse, metaParse5?: MetamorphicParse): Array<Literal>;
     /**
      * Returns a list of SynSets using 5 possible words gathered with the specified morphological parses and metamorphic parses.
      *
@@ -203,7 +203,7 @@ export declare class WordNet {
      * @param fsm                 finite state machine morphological analyzer to be used at getting possible words
      * @return a list of SynSets
      */
-    constructIdiomSynSets(fsm: FsmMorphologicalAnalyzer, morphologicalParse1: MorphologicalParse, metaParse1: MetamorphicParse, morphologicalParse2: MorphologicalParse, metaParse2: MetamorphicParse, morphologicalParse3: MorphologicalParse, metaParse3: MetamorphicParse, morphologicalParse4: MorphologicalParse, metaParse4: MetamorphicParse, morphologicalParse5: MorphologicalParse, metaParse5: MetamorphicParse): Array<SynSet>;
+    constructIdiomSynSets(fsm: FsmMorphologicalAnalyzer, morphologicalParse1: MorphologicalParse, metaParse1: MetamorphicParse, morphologicalParse2: MorphologicalParse, metaParse2: MetamorphicParse, morphologicalParse3?: MorphologicalParse, metaParse3?: MetamorphicParse, morphologicalParse4?: MorphologicalParse, metaParse4?: MetamorphicParse, morphologicalParse5?: MorphologicalParse, metaParse5?: MetamorphicParse): Array<SynSet>;
     /**
      * Sorts definitions of SynSets in SynSet list according to their lengths.
      */

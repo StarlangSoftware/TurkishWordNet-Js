@@ -540,7 +540,7 @@ export class WordNet {
      * @param fsm       finite state machine morphological analyzer to be used at getting possible words
      * @return a list of literal
      */
-    constructLiterals(word: string, parse: MorphologicalParse, metaParse: MetamorphicParse, fsm: FsmMorphologicalAnalyzer){
+    constructLiterals(word: string, parse: MorphologicalParse, metaParse: MetamorphicParse, fsm: FsmMorphologicalAnalyzer): Array<Literal>{
         let result = new Array<Literal>();
         if (parse.size() > 0) {
             if (!parse.isPunctuation() && !parse.isCardinal() && !parse.isReal()) {
@@ -566,7 +566,7 @@ export class WordNet {
      * @param fsm       finite state machine morphological analyzer to be used at getting possible words
      * @return a list of SynSets
      */
-    constructSynSets(word: string, parse: MorphologicalParse, metaParse: MetamorphicParse, fsm: FsmMorphologicalAnalyzer){
+    constructSynSets(word: string, parse: MorphologicalParse, metaParse: MetamorphicParse, fsm: FsmMorphologicalAnalyzer): Array<SynSet>{
         let result = new Array<SynSet>();
         if (parse.size() > 0) {
             if (parse.isProperNoun()) {
@@ -680,9 +680,9 @@ export class WordNet {
     constructIdiomLiterals(fsm: FsmMorphologicalAnalyzer,
                            morphologicalParse1: MorphologicalParse, metaParse1: MetamorphicParse,
                            morphologicalParse2: MorphologicalParse, metaParse2: MetamorphicParse,
-                           morphologicalParse3: MorphologicalParse, metaParse3: MetamorphicParse,
-                           morphologicalParse4: MorphologicalParse, metaParse4: MetamorphicParse,
-                           morphologicalParse5: MorphologicalParse, metaParse5: MetamorphicParse): Array<Literal>{
+                           morphologicalParse3?: MorphologicalParse, metaParse3?: MetamorphicParse,
+                           morphologicalParse4?: MorphologicalParse, metaParse4?: MetamorphicParse,
+                           morphologicalParse5?: MorphologicalParse, metaParse5?: MetamorphicParse): Array<Literal>{
         let result = new Array<Literal>();
         let possibleWords1 = fsm.getPossibleWords(morphologicalParse1, metaParse1);
         let possibleWords2 = fsm.getPossibleWords(morphologicalParse2, metaParse2);
@@ -762,9 +762,9 @@ export class WordNet {
     constructIdiomSynSets(fsm: FsmMorphologicalAnalyzer,
                            morphologicalParse1: MorphologicalParse, metaParse1: MetamorphicParse,
                            morphologicalParse2: MorphologicalParse, metaParse2: MetamorphicParse,
-                           morphologicalParse3: MorphologicalParse, metaParse3: MetamorphicParse,
-                           morphologicalParse4: MorphologicalParse, metaParse4: MetamorphicParse,
-                           morphologicalParse5: MorphologicalParse, metaParse5: MetamorphicParse): Array<SynSet>{
+                           morphologicalParse3?: MorphologicalParse, metaParse3?: MetamorphicParse,
+                           morphologicalParse4?: MorphologicalParse, metaParse4?: MetamorphicParse,
+                           morphologicalParse5?: MorphologicalParse, metaParse5?: MetamorphicParse): Array<SynSet>{
         let result = new Array<SynSet>();
         let possibleWords1 = fsm.getPossibleWords(morphologicalParse1, metaParse1);
         let possibleWords2 = fsm.getPossibleWords(morphologicalParse2, metaParse2);
