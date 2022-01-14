@@ -157,6 +157,11 @@
                                                     if (partNode.getName() == "SNOTE") {
                                                         currentSynSet.setNote(partNode.getPcData());
                                                     }
+                                                    else {
+                                                        if (partNode.getName() == "WIKI") {
+                                                            currentSynSet.setWikiPage(partNode.getPcData());
+                                                        }
+                                                    }
                                                 }
                                             }
                                         }

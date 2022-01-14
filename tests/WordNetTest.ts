@@ -6,21 +6,30 @@ describe('WordNetTest', function() {
     describe('WordNetTest', function() {
         let turkish = new WordNet();
         it('testSize', function() {
-            assert.strictEqual(77099, turkish.size());
+            assert.strictEqual(77100, turkish.size());
+        });
+        it('testWikiPages', function() {
+            let wikiCount = 0;
+            for (let synSet of turkish.getSynSetList()){
+                if (synSet.getWikiPage() != undefined){
+                    wikiCount++;
+                }
+            }
+            assert.strictEqual(10987, wikiCount);
         });
         it('testSynSetList', function() {
             let literalCount = 0;
             for (let synSet of turkish.getSynSetList()){
                 literalCount += synSet.getSynonym().literalSize();
             }
-            assert.strictEqual(109013, literalCount);
+            assert.strictEqual(109007, literalCount);
         });
         it('testLiteralList', function() {
             let literalCount = 0;
             for (let literal of turkish.getLiteralList()){
                 literalCount++
             }
-            assert.strictEqual(81064, literalCount);
+            assert.strictEqual(81062, literalCount);
         });
         it('testGetSynSetWithId', function() {
             assert.ok(undefined != turkish.getSynSetWithId("TUR10-0000040"));
@@ -82,10 +91,10 @@ describe('WordNetTest', function() {
             assert.strictEqual(59, turkish.numberOfSynSetsWithLiteral("çıkmak"));
         });
         it('testGetSynSetsWithPartOfSpeech', function() {
-            assert.strictEqual(43872, turkish.getSynSetsWithPartOfSpeech(Pos.NOUN).length);
-            assert.strictEqual(17773, turkish.getSynSetsWithPartOfSpeech(Pos.VERB).length);
-            assert.strictEqual(12409, turkish.getSynSetsWithPartOfSpeech(Pos.ADJECTIVE).length);
-            assert.strictEqual(2547, turkish.getSynSetsWithPartOfSpeech(Pos.ADVERB).length);
+            assert.strictEqual(43871, turkish.getSynSetsWithPartOfSpeech(Pos.NOUN).length);
+            assert.strictEqual(17776, turkish.getSynSetsWithPartOfSpeech(Pos.VERB).length);
+            assert.strictEqual(12406, turkish.getSynSetsWithPartOfSpeech(Pos.ADJECTIVE).length);
+            assert.strictEqual(2549, turkish.getSynSetsWithPartOfSpeech(Pos.ADVERB).length);
             assert.strictEqual(339, turkish.getSynSetsWithPartOfSpeech(Pos.INTERJECTION).length);
             assert.strictEqual(68, turkish.getSynSetsWithPartOfSpeech(Pos.PRONOUN).length);
             assert.strictEqual(61, turkish.getSynSetsWithPartOfSpeech(Pos.CONJUNCTION).length);

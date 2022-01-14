@@ -18,6 +18,7 @@ export class SynSet {
     private synonym: Synonym = new Synonym()
     private relations: Array<Relation> = new Array<Relation>()
     private note: string
+    private wikiPage: string = undefined
     private bcs: number
 
     /**
@@ -268,6 +269,24 @@ export class SynSet {
      */
     getNote(): string{
         return this.note
+    }
+
+    /**
+     * Mutator for the wiki pages.
+     *
+     * @param wikiPage String wiki page
+     */
+    setWikiPage(wikiPage: string){
+        this.wikiPage = wikiPage
+    }
+
+    /**
+     * Accessor for the wiki page.
+     *
+     * @return String wiki page
+     */
+    getWikiPage(): string{
+        return this.wikiPage
     }
 
     /**

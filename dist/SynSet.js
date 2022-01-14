@@ -26,6 +26,7 @@
             this.example = undefined;
             this.synonym = new Synonym_1.Synonym();
             this.relations = new Array();
+            this.wikiPage = undefined;
             this.id = id;
         }
         /**
@@ -258,6 +259,22 @@
          */
         getNote() {
             return this.note;
+        }
+        /**
+         * Mutator for the wiki pages.
+         *
+         * @param wikiPage String wiki page
+         */
+        setWikiPage(wikiPage) {
+            this.wikiPage = wikiPage;
+        }
+        /**
+         * Accessor for the wiki page.
+         *
+         * @return String wiki page
+         */
+        getWikiPage() {
+            return this.wikiPage;
         }
         /**
          * Appends the specified Relation to the end of relations list.

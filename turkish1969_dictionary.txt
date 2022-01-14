@@ -612,6 +612,7 @@ aglütinin CL_ISIM
 agnes IS_OA
 agnieszka IS_OA
 agnosi CL_ISIM
+agnostik IS_SD CL_ISIM
 agnostisizm CL_ISIM
 agop IS_OA
 agopyan IS_OA
@@ -1911,7 +1912,7 @@ amatem IS_OA
 amatör CL_ISIM
 amaya IS_OA
 amazon CL_ISIM
-ambalâj CL_ISIM
+ambalaj CL_ISIM
 ambar IS_OA CL_ISIM
 ambarcı CL_ISIM
 ambargo CL_ISIM
@@ -19142,7 +19143,7 @@ kabza CL_ISIM
 kabzımal CL_ISIM
 kacper IS_OA
 kaç F2P1-NO-REF IS_ADJ CL_FIIL
-kaçak IS_SD CL_ISIM IS_ADJ
+kaçak IS_SD IS_ADJ CL_ISIM
 kaçakçı IS_ADJ
 kaçakçılık IS_SD CL_ISIM
 kaçamak IS_SD CL_ISIM
@@ -19206,7 +19207,7 @@ kadız CL_ISIM
 kadife IS_OA CL_ISIM
 kadim IS_OA IS_ADJ
 kadime IS_OA
-kadir IS_OA IS_UD CL_ISIM IS_ADJ
+kadir IS_OA IS_UD IS_UDD CL_ISIM IS_ADJ
 kadîr IS_OA
 kadirbilir IS_ADJ
 kadirbilirlik IS_SD CL_ISIM
@@ -20318,7 +20319,7 @@ katibe IS_OA
 kâtibiadil CL_ISIM
 katie IS_OA
 katife IS_OA
-katil IS_UD IS_ADJ CL_ISIM
+katil IS_UD IS_UDD IS_ADJ CL_ISIM
 katillik IS_SD CL_ISIM
 katimerini IS_OA
 katip IS_OA
@@ -23767,7 +23768,7 @@ lokavt CL_ISIM
 loke IS_OA
 lokma CL_ISIM
 lokmacı CL_ISIM
-lokmagöz IS_ADJ
+lokmagöz CL_ISIM
 lokman IS_OA
 lokmanruhu IS_BILEŞ CL_ISIM
 lokomobil CL_ISIM
@@ -24288,6 +24289,7 @@ maltız IS_OA CL_ISIM
 mâlûl IS_ADJ
 malum IS_OA
 malûm CL_ISIM IS_ADJ
+malumat CL_ISIM
 mâlûmât CL_ISIM
 malûmatfüruş CL_ISIM
 malûmatlı IS_ADJ
@@ -25281,7 +25283,7 @@ methiye IS_OA CL_ISIM
 metil CL_ISIM
 metilen CL_ISIM
 metilik IS_ADJ
-metin IS_OA IS_UD CL_ISIM
+metin IS_OA IS_UD IS_UDD CL_ISIM
 metîn IS_OA IS_ADJ
 metine IS_OA
 metiner IS_OA

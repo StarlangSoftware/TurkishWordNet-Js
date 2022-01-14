@@ -12,6 +12,7 @@ export declare class SynSet {
     private synonym;
     private relations;
     private note;
+    private wikiPage;
     private bcs;
     /**
      * Constructor initialize SynSet ID, synonym and relations list.
@@ -128,6 +129,18 @@ export declare class SynSet {
      * @return String note
      */
     getNote(): string;
+    /**
+     * Mutator for the wiki pages.
+     *
+     * @param wikiPage String wiki page
+     */
+    setWikiPage(wikiPage: string): void;
+    /**
+     * Accessor for the wiki page.
+     *
+     * @return String wiki page
+     */
+    getWikiPage(): string;
     /**
      * Appends the specified Relation to the end of relations list.
      *
