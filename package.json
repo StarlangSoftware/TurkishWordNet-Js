@@ -1,6 +1,6 @@
 {
   "name": "nlptoolkit-wordnet",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Turkish WordNet Processing Library",
   "main": "index.js",
   "types": "index.js",
