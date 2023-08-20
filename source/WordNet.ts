@@ -126,6 +126,10 @@ export class WordNet {
                                                                                 currentLiteral.addRelation(new SemanticRelation(srNode.getPcData(), typeNode.getPcData()));
                                                                             }
                                                                         }
+                                                                    } else {
+                                                                        if (srNode.getName() == "ORIGIN") {
+                                                                            currentLiteral.setOrigin(srNode.getPcData())
+                                                                        }
                                                                     }
                                                                     srNode = srNode.getNextSibling();
                                                                 }

@@ -143,6 +143,11 @@
                                                                                 }
                                                                             }
                                                                         }
+                                                                        else {
+                                                                            if (srNode.getName() == "ORIGIN") {
+                                                                                currentLiteral.setOrigin(srNode.getPcData());
+                                                                            }
+                                                                        }
                                                                         srNode = srNode.getNextSibling();
                                                                     }
                                                                     currentSynSet.addLiteral(currentLiteral);
