@@ -129,6 +129,10 @@ export class WordNet {
                                                                     } else {
                                                                         if (srNode.getName() == "ORIGIN") {
                                                                             currentLiteral.setOrigin(srNode.getPcData())
+                                                                        } else {
+                                                                            if (srNode.getName() == "GROUP") {
+                                                                                currentLiteral.setGroupNo(Number.parseInt(senseNode.getPcData()))
+                                                                            }
                                                                         }
                                                                     }
                                                                     srNode = srNode.getNextSibling();

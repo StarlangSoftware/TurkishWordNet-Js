@@ -6,6 +6,7 @@ export declare class Literal {
     protected synSetId: string;
     protected origin: string;
     protected relations: Array<Relation>;
+    protected groupNo: number;
     /**
      * A constructor that initializes name, sense, SynSet ID and the relations.
      *
@@ -44,6 +45,18 @@ export declare class Literal {
      * @param origin origin of the literal to set
      */
     setOrigin(origin: string): void;
+    /**
+     * Accessor method to return the group no of the literal.
+     *
+     * @return origin of the literal
+     */
+    getGroupNo(): number;
+    /**
+     * Mutator method to set the group no with specified group no.
+     *
+     * @param groupNo group no of the literal to set
+     */
+    setGroupNo(groupNo: number): void;
     /**
      * Mutator method to set the sense index of the literal.
      *

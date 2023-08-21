@@ -25,6 +25,7 @@
             this.name = name;
             this.sense = sense;
             this.synSetId = synSetId;
+            this.groupNo = 0;
         }
         /**
          * Accessor method to return SynSet ID.
@@ -65,6 +66,22 @@
          */
         setOrigin(origin) {
             this.origin = origin;
+        }
+        /**
+         * Accessor method to return the group no of the literal.
+         *
+         * @return origin of the literal
+         */
+        getGroupNo() {
+            return this.groupNo;
+        }
+        /**
+         * Mutator method to set the group no with specified group no.
+         *
+         * @param groupNo group no of the literal to set
+         */
+        setGroupNo(groupNo) {
+            this.groupNo = groupNo;
         }
         /**
          * Mutator method to set the sense index of the literal.

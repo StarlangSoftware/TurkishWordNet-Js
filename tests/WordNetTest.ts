@@ -28,6 +28,17 @@ describe('WordNetTest', function() {
             }
             assert.strictEqual(3981, count);
         });
+        it('testTotalGroupedLiterals', function() {
+            let count = 0
+            for (let synSet of turkish.getSynSetList()){
+                for (let i = 0; i < synSet.getSynonym().literalSize(); i++){
+                    if (synSet.getSynonym().getLiteral(i).getGroupNo() != 0){
+                        count++
+                    }
+                }
+            }
+            assert.strictEqual(5973, count)
+        });
         it('testSynSetList', function() {
             let literalCount = 0;
             for (let synSet of turkish.getSynSetList()){

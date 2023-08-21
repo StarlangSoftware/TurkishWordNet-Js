@@ -17,6 +17,7 @@ export declare class Synonym {
      * @param literal element to be moved to the first element of the list
      */
     moveFirst(literal: Literal): void;
+    getUniqueLiterals(): Array<Synonym>;
     /**
      * Returns the element at the specified position in literals list.
      *

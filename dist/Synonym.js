@@ -36,6 +36,29 @@
                 this.literals.splice(0, 0, literal);
             }
         }
+        getUniqueLiterals() {
+            let literalGroups = Array();
+            let groupNo = -1;
+            let synonym = new Synonym();
+            for (let literal of this.literals) {
+                if (literal.getGroupNo() != groupNo) {
+                    if (groupNo != -1) {
+                        literalGroups.push(synonym);
+                    }
+                    groupNo = literal.getGroupNo();
+                    synonym = new Synonym();
+                }
+                else {
+                    if (groupNo == 0) {
+                        literalGroups.push(synonym);
+                        synonym = new Synonym();
+                    }
+                }
+                synonym.addLiteral(literal);
+            }
+            literalGroups.push(synonym);
+            return literalGroups;
+        }
         /**
          * Returns the element at the specified position in literals list.
          *

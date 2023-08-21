@@ -9,6 +9,7 @@ export class Literal {
     protected synSetId: string
     protected origin: string = undefined
     protected relations: Array<Relation> = new Array<Relation>()
+    protected groupNo: number
 
     /**
      * A constructor that initializes name, sense, SynSet ID and the relations.
@@ -21,6 +22,7 @@ export class Literal {
         this.name = name
         this.sense = sense
         this.synSetId = synSetId
+        this.groupNo = 0
     }
 
     /**
@@ -66,6 +68,24 @@ export class Literal {
      */
     setOrigin(origin: string){
         this.origin = origin
+    }
+
+    /**
+     * Accessor method to return the group no of the literal.
+     *
+     * @return origin of the literal
+     */
+    getGroupNo(): number{
+        return this.groupNo
+    }
+
+    /**
+     * Mutator method to set the group no with specified group no.
+     *
+     * @param groupNo group no of the literal to set
+     */
+    setGroupNo(groupNo: number){
+        this.groupNo = groupNo
     }
 
     /**
