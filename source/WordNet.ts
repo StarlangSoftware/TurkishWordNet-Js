@@ -20,6 +20,15 @@ export class WordNet {
     private exceptionList: Map<string, Array<ExceptionalWord>> = new Map<string, Array<ExceptionalWord>>()
     interlingualList: Map<string, Array<SynSet>> = new Map<string, Array<SynSet>>()
 
+    /**
+     * Reads a wordnet from a Xml file. A wordnet consists of a list of synsets encapsulated inside SYNSET tag. A synset
+     * has an id (represented with ID tag), a set of literals encapsulated inside SYNONYM tag, part of speech tag
+     * (represented with POS tag), a set of semantic relations encapsulated inside SR tag, a definition (represented
+     * with DEF tag), and a possible example (represented with EXAMPLE tag). Each literal has a name, possibly a group
+     * number (represented with GROUP tag), a sense number (represented with SENSE tag) and a set of semantic relations
+     * encapsulated inside SR tag. A semantic relation has a name and a type (represented with TYPE tag).
+     * @param fileName File stream that contains the wordnet.
+     */
     constructor(fileName?: string, locale?: string) {
         if (fileName == undefined){
             fileName = "turkish_wordnet.xml"
@@ -228,10 +237,21 @@ export class WordNet {
         this.literalList.set(literal.getName(), literals);
     }
 
+    /**
+     * Returns the locale.
+     */
     getLocale(): string{
         return this.locale
     }
 
+    /**
+     * Updates the wordnet according to the situation that an old synset replaced with a new synset. There are three
+     * possibilities: (i) The new synset has a relation with the old synset, then the relation is removed,
+     * (ii) A synset has the same type of relation with old synset and new synset, then the relation is removed,
+     * (iii) None of the above, then the old synset id in the relation is replaced with the new synset id.
+     * @param oldSynSet Old synset to be replaced
+     * @param newSynSet New synset replacing the old synset
+     */
     private updateAllRelationsAccordingToNewSynSet(oldSynSet: SynSet, newSynSet: SynSet){
         for (let synSet of this.getSynSetList()){
             for (let i = 0; i < synSet.relationSize(); i++){
@@ -531,12 +551,22 @@ export class WordNet {
         }
     }
 
+    /**
+     * Appends the elements of the second array to the end of the first array.
+     * @param result Array to be appended to.
+     * @param toBeAdded Array to be appended.
+     */
     private static addAll(result: Array<Literal>, toBeAdded: Array<Literal>){
         for (let literal of toBeAdded){
             result.push(literal)
         }
     }
 
+    /**
+     * Appends the elements of the second array to the end of the first array.
+     * @param result Array to be appended to.
+     * @param toBeAdded Array to be appended.
+     * */
     private addAll(result: Array<SynSet>, toBeAdded: Array<SynSet>){
         for (let synSet of toBeAdded){
             result.push(synSet)
