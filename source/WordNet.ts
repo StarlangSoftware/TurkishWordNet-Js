@@ -28,6 +28,7 @@ export class WordNet {
      * number (represented with GROUP tag), a sense number (represented with SENSE tag) and a set of semantic relations
      * encapsulated inside SR tag. A semantic relation has a name and a type (represented with TYPE tag).
      * @param fileName File stream that contains the wordnet.
+     * @param locale Locale string, "tr" for Turkish.
      */
     constructor(fileName?: string, locale?: string) {
         if (fileName == undefined){
