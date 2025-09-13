@@ -59,7 +59,12 @@ export class InterlingualRelation extends Relation{
      * @return String interlingual dependency type
      */
     getTypeAsString(): string{
-        return InterlingualRelation.ilrDependency[this.dependencyType];
+        for (let j = 0; j < InterlingualRelation.ilrDependency.length; j++) {
+            if (this.dependencyType == InterlingualRelation.interlingualDependencyTags[j]) {
+                return InterlingualRelation.ilrDependency[j];
+            }
+        }
+        return undefined;
     }
 
     /**

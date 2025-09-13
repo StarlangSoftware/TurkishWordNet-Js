@@ -1,0 +1,6 @@
+/node_modules/
+/.idea/jsLibraryMappings.xml
+/.idea/modules.xml
+/.idea/wordnet.iml
+/.idea/vcs.xml
+/package-lock.json

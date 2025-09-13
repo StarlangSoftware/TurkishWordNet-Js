@@ -136,7 +136,11 @@ export class SemanticRelation extends Relation{
      */
     getTypeAsString(): string{
         if (this.relationType != undefined) {
-            return SemanticRelation.semanticDependency[this.relationType];
+            for (let j = 0; j < SemanticRelation.semanticDependencyTags.length; j++) {
+                if (this.relationType == SemanticRelation.semanticDependencyTags[j]) {
+                    return SemanticRelation.semanticDependency[j];
+                }
+            }
         } else {
             return undefined;
         }

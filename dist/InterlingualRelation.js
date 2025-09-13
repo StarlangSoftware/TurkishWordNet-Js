@@ -53,7 +53,12 @@
          * @return String interlingual dependency type
          */
         getTypeAsString() {
-            return InterlingualRelation.ilrDependency[this.dependencyType];
+            for (let j = 0; j < InterlingualRelation.ilrDependency.length; j++) {
+                if (this.dependencyType == InterlingualRelation.interlingualDependencyTags[j]) {
+                    return InterlingualRelation.ilrDependency[j];
+                }
+            }
+            return undefined;
         }
         /**
          * toString method to print interlingual dependency type.
