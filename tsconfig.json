@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "es2018",
+    "outDir": "dist",
+    "module": "nodeNext",
     "sourceMap": true,
     "noImplicitAny": true,
     "removeComments": false,
-    "moduleResolution": "node"
+    "declaration": true,
   },
   "exclude": [
+    "tests",
     "node_modules",
     "dist"
   ]
