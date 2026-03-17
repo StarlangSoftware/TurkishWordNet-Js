@@ -60,7 +60,7 @@ For Developers
 
 You can also see [Java](https://github.com/starlangsoftware/TurkishWordNet), [Python](https://github.com/starlangsoftware/TurkishWordNet-Py), 
 [Cython](https://github.com/starlangsoftware/TurkishWordNet-Cy), [Swift](https://github.com/starlangsoftware/TurkishWordNet-Swift), 
-[C++](https://github.com/starlangsoftware/TurkishWordNet-CPP), [C](https://github.com/starlangsoftware/TurkishWordNet-C), or [C#](https://github.com/starlangsoftware/TurkishWordNet-CS) repository.
+[C++](https://github.com/starlangsoftware/TurkishWordNet-CPP), [C](https://github.com/starlangsoftware/TurkishWordNet-C), [Php](https://github.com/starlangsoftware/TurkishWordNet-Php), or [C#](https://github.com/starlangsoftware/TurkishWordNet-CS) repository.
 
 ## Requirements
 
