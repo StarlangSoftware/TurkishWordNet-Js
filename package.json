@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "nlptoolkit-corpus": "^1.0.12",
-    "nlptoolkit-dictionary": "^1.0.14",
+    "nlptoolkit-dictionary": "^1.0.16",
     "nlptoolkit-morphologicalanalysis": "^1.0.19",
     "nlptoolkit-xmlparser": "^1.0.7"
   }
